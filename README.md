@@ -25,3 +25,5 @@ Log4J2LoggingSystem
 ```
 
 看源码是默认支持 `log4j2.xml`
+
+https://blog.csdn.net/vbirdbest/article/details/71751835
