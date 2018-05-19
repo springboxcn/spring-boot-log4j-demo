@@ -87,3 +87,32 @@ org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter
 
 ```
 
+`LoggingSystem` 这里可以看到加载的默认查找顺序,优先级
+
+```java
+    static {
+		Map<String, String> systems = new LinkedHashMap<String, String>();
+		systems.put("ch.qos.logback.core.Appender",
+				"org.springframework.boot.logging.logback.LogbackLoggingSystem");
+		systems.put("org.apache.logging.log4j.core.impl.Log4jContextFactory",
+				"org.springframework.boot.logging.log4j2.Log4J2LoggingSystem");
+		systems.put("java.util.logging.LogManager",
+				"org.springframework.boot.logging.java.JavaLoggingSystem");
+		SYSTEMS = Collections.unmodifiableMap(systems);
+	}
+	
+	public static LoggingSystem get(ClassLoader classLoader) {
+        String loggingSystem = System.getProperty(SYSTEM_PROPERTY);
+        if (StringUtils.hasLength(loggingSystem)) {
+            if (NONE.equals(loggingSystem)) {
+                return new NoOpLoggingSystem();
+            }
+            return get(classLoader, loggingSystem);
+        }
+        for (Map.Entry<String, String> entry : SYSTEMS.entrySet()) {
+            if (ClassUtils.isPresent(entry.getKey(), classLoader)) {
+                return get(classLoader, entry.getValue());
+            }
+        }
+        throw new IllegalStateException("No suitable logging system located");
+```
