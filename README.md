@@ -2,9 +2,11 @@
 
 ### [log4j2-for-springboot](log4j2-for-springboot.md)
 
-https://github.com/apache/logging-log4j2
+[github/logging-log4j2](https://github.com/apache/logging-log4j2)
 
-https://logging.apache.org/log4j/2.x/manual/appenders.html
+[apache/log4j/2.x/manual/appenders](https://logging.apache.org/log4j/2.x/manual/appenders.html)
+
+[Log4j2写日志的艺术](https://blog.csdn.net/scherrer/article/details/73744392)
 
 ```xml
 <Loggers>
