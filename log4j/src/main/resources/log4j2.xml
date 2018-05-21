@@ -6,13 +6,22 @@
         <property name="log.sql.level">info</property>
     </properties>
 
-
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %l - %msg%n" />
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %l - %msg%n"/>
         </Console>
+        <RollingRandomAccessFile name="RollingRandomAccessFile" fileName="${LOG_HOME}/${FILE_NAME}.log"
+                                 filePattern="${LOG_HOME}/$${date:yyyy-MM}/${FILE_NAME}-%d{yyyy-MM-dd HH-mm}-%i.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %l - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingRandomAccessFile>
 
-        <RollingRandomAccessFile name="RollingRandomAccessFile" fileName="${LOG_HOME}/${FILE_NAME}.log" filePattern="${LOG_HOME}/$${date:yyyy-MM}/${FILE_NAME}-%d{yyyy-MM-dd HH-mm}-%i.log">
+        <RollingRandomAccessFile name="RollingRandomAccessFile2" fileName="${LOG_HOME}/D.log"
+                                 filePattern="${LOG_HOME}/$${date:yyyy-MM}/D-%d{yyyy-MM-dd HH-mm}-%i.log">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %l - %msg%n"/>
             <Policies>
                 <TimeBasedTriggeringPolicy interval="1"/>
@@ -23,9 +32,12 @@
     </Appenders>
 
     <Loggers>
+        <logger name="D">
+            <AppenderRef ref="RollingRandomAccessFile2"/>
+        </logger>
         <Root level="info">
-            <AppenderRef ref="Console" />
-            <AppenderRef ref="RollingRandomAccessFile" />
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="RollingRandomAccessFile"/>
         </Root>
     </Loggers>
 </Configuration>
