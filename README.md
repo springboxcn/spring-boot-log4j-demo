@@ -4,6 +4,8 @@
 
 https://github.com/apache/logging-log4j2
 
+https://logging.apache.org/log4j/2.x/manual/appenders.html
+
 ```xml
 <Loggers>
     <logger name="D">
