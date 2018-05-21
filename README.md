@@ -47,3 +47,30 @@ LOGGERD.error("d this is error msg!");
 
 这样可以将日志模块化，某一个模块的日志打印到一个文件中!
 
+## 依赖
+
+### Maven
+
+```xml
+<dependencies>
+  <dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-api</artifactId>
+    <version>2.11.0</version>
+  </dependency>
+  <dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-core</artifactId>
+    <version>2.11.0</version>
+  </dependency>
+</dependencies>
+```
+
+### Gradle
+
+```groovy
+dependencies {
+  compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.11.0'
+  compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.0'
+}
+```
