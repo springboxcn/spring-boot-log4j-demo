@@ -8,6 +8,13 @@
 
 [Log4j2写日志的艺术](https://blog.csdn.net/scherrer/article/details/73744392)
 
+http://logging.apache.org/log4j/2.x/
+
+
+https://www.cnblogs.com/sa-dan/p/6837225.html
+https://logback.qos.ch/manual/layouts.html#conversionWord
+
+
 ```xml
 <Loggers>
     <logger name="D">
