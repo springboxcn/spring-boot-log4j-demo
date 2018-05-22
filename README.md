@@ -14,6 +14,8 @@ http://logging.apache.org/log4j/2.x/
 https://www.cnblogs.com/sa-dan/p/6837225.html
 https://logback.qos.ch/manual/layouts.html#conversionWord
 
+https://stackoverflow.com/questions/38272287/log4j2-abbreviate-shorten-package-names
+
 
 ```xml
 <Loggers>
