@@ -8,6 +8,8 @@
 
 [Log4j2写日志的艺术](https://blog.csdn.net/scherrer/article/details/73744392)
 
+[Log4j是如何取得行号的](http://flyfoxs.iteye.com/blog/2089996)
+
 http://logging.apache.org/log4j/2.x/
 
 
