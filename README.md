@@ -10,6 +10,8 @@
 
 [Log4j是如何取得行号的](http://flyfoxs.iteye.com/blog/2089996)
 
+https://blog.csdn.net/relative660/article/details/4263977
+
 http://logging.apache.org/log4j/2.x/
 
 
