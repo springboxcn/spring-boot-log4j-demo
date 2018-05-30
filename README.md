@@ -93,3 +93,9 @@ dependencies {
   compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.0'
 }
 ```
+
+## LICENSE
+
+### [CC-BY-SA-3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/cn/)
+
+[![](LICENSE.png)](https://creativecommons.org/licenses/by-nc-sa/3.0/cn/)
